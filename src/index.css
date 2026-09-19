@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-900 text-white font-sans antialiased;
+  }
+}
+
+@layer components {
+  .container-lux {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-gold-300 to-gold-500 text-ink-900 font-semibold text-sm tracking-wide transition-all duration-300 hover:from-gold-200 hover:to-gold-400 hover:shadow-lg hover:shadow-gold-400/30 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-gold-400/50 text-gold-200 font-semibold text-sm tracking-wide transition-all duration-300 hover:border-gold-300 hover:bg-gold-400/10 hover:text-gold-100 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-ink-600 text-white font-semibold text-sm tracking-wide border border-ink-400/50 transition-all duration-300 hover:bg-ink-500 hover:border-gold-400/30 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .section-title {
+    @apply font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-gold-300 text-sm font-semibold tracking-[0.2em] uppercase;
+  }
+
+  .card-product {
+    @apply relative bg-ink-800 rounded-2xl overflow-hidden border border-ink-500/60 transition-all duration-500 hover:border-gold-400/40 hover:shadow-xl hover:shadow-gold-400/10 hover:-translate-y-1;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-200 via-gold-400 to-gold-300 bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply bg-ink-800/80 backdrop-blur-xl border border-ink-400/40;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #070a14;
+}
+::-webkit-scrollbar-thumb {
+  background: #273056;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Reveal animation utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
